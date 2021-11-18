@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ragnarok</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="css/progress-circle.css">
+    <!-- Owl Stylesheets -->
+    <link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
+
+    <!-- javascript -->
+    <script src="assets/vendors/jquery.min.js"></script>
+    <script src="assets/owlcarousel/owl.carousel.js"></script>
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- sidebar -->
+    <div class="overlay"></div>
+    <nav id="sidebar">
+        <div class="sidebarHeader">
+            <div id="dismiss">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+        </div>
+        <div class="slideBody">
+            <a href="#" style="color:white">Login</a>
+            <a href="#" style="color:white">Cadastre-se</a>
+            <a href="#">Cêmera de segurança</a>
+            <a href="#">Motor de portão</a>
+            <a href="#">Fechadura elétrica</a>
+            <a href="#">Smart Home</a>
+            <a href="#">Energia Solar</a>
+            <a href="#" class="buttonloginSlidbar" data-toggle="modal" data-target="#exampleModal">Ofertas</a>
+        </div>
+    </nav><!-- buttonSlidebar -->
+    <div class="buttonSlidebar">
+        <button type="button" id="sidebarCollapse" class="btn btn-dark">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+    </div>
+    <style>
+        .progress-circle {
+            position: relative;
+            display: inline-block;
+            margin: 1rem;
+            /*tamanho*/
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #ebebeb;
+        }
+
+        .progress-circle:after {
+            content: '';
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            -webkit-animation: colorload 2s;
+            animation: colorload 2s;
+        }
+
+        .progress-circle span {
+            font-size: 1.5rem;
+            color: #8b8b8b;
+            position: absolute;
+            /*posição do circulo central*/
+            left: 50%;
+            top: 50%;
+            display: block;
+            /*tamanho*/
+            width: 60px;
+            height: 60px;
+            line-height: 55px;
+            margin-left: -30px;
+            margin-top: -30px;
+            text-align: center;
+            border-radius: 50%;
+            background: #fff;
+            z-index: 1;
+            font-weight: 700;
+        }
+
+        .progress-circle span:after {
+            content: "";
+            font-weight: 300;
+            color: #8b8b8b;
+            font-size: 70%;
+        }
+    </style>
+    <!-- headerBar -->
+    <div class="headerBar">
+        <div class="headerYellow">
+            <p>Economize com frete grátis para sul e sudeste nas compras acima de R$ 500,00</p>
+        </div>
+        <div class="headerRed">
+            <div class="headerRedBox">
+                <p>WhatsApp (48) 99164-6933 - lojaonline@grupokhrones.com.br - televendas (48) 3381-9980</p>
+                <div class="hRedBoxSearch">
+                    <input type="search" id="site-search" placeholder="O que você está procurando ?"><img
+                        src="img/magnifying-glass.png" alt="search" id="search">
+                    <img src="img/perfil-de-usuario.png" alt="usuario" id="usuario">
+                    <div class="hRedBoxSearch-P">
+                        <p>Olá! Faça seu <span>login</span></p>
+                        <p>ou <span>cadastre-se</span></p>
+                    </div>
+                    <img src="img/carrinho-carrinho.png" alt="usuario" id="carrinho">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- navBar -->
+    <div class="linkBar">
+        <a href="#" style="color: rgb(163, 24, 24); font-weight: 600;">Todas as categorias</a>
+        <a href="#">Cêmera de segurança</a>
+        <a href="#">Motor de portão</a>
+        <a href="#">Fechadura elétrica</a>
+        <a href="#">Smart Home</a>
+        <a href="#">Energia Solar</a>
+        <a href="#">Ofertas</a>
+    </div>
+    <!-- bgGray -->
+    <div class="bgGray"></div>
+    <!-- Mais vistos -->
+    <div class="maisVistos">
+        <div class="maisVistosBox">
+            <p>Mais vistos da semana</p>
+            <div class="maisVistosCarrosel owl-carousel owl-theme col-lg-12 col-md-12">
+                <div class="carrosselItem">
+                    <img src="img/produto.png" alt="produto">
+                    <p>Superia 4000 D4 SMD 4 Zonas</p>
+                    <p>Cdisc</p>
+                    <p>CD367</p>
+                    <p>RS 125,60</p>
+                    <p>RS 109,15</p>
+                    <p>6x de RS18,19 sem juros</p>
+                    <button type="button"><img src="img/carrinho-de-compras.png" alt="carrinho"> COMPRAR</button>
+                </div>
+                <div class="carrosselItem oferta">
+                    <p>-30%</p>
+                    <img src="img/produto.png" alt="produto">
+                    <div class="semanaConsumidor">
+                        <p><img src="img/flash.png" alt="flash"> SEMANA DO CONSUMIDOR</p>
+                    </div>
+                    <p>Superia 4000 D4 SMD 4 Zonas</p>
+                    <p>Cdisc</p>
+                    <p>CD367</p>
+                    <p>RS 125,60</p>
+                    <p>RS 109,15</p>
+                    <p>6x de RS18,19 sem juros</p>
+                    <button type="button"><img src="img/carrinho-de-compras.png" alt="carrinho"> COMPRAR</button>
+                </div>
+                <div class="carrosselItem">
+                    <img src="img/produto.png" alt="produto">
+                    <p id="semEstoque">PRODUTO SEM <br>ESTOQUE</p>
+                    <button type="button" id="disabled">AVISE-ME</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- linhaGiga -->
+    <div class="linhaGiga">
+        <div class="linhaGigaBox">
+            <img src="img/camera.png" alt="camera">
+            <p>LINHA GIGA COM<br><span>30%</span></p>
+            <div class="progressBox">
+                <div class="linhaGigaBoxProgress">
+                    <div class="progress-circle-container">
+                        <div class="progress-circle progress-25"><span>14</span></div>
+                    </div>
+                    <p>HORAS</p>
+                </div>
+                <div class="linhaGigaBoxProgress">
+                    <div class="progress-circle-container">
+                        <div class="progress-circle progress-25"><span>31</span></div>
+                    </div>
+                    <p>MINUTOS</p>
+                </div>
+                <div class="linhaGigaBoxProgress">
+                    <div class="progress-circle-container">
+                        <div class="progress-circle progress-25"><span>49</span></div>
+                    </div>
+                    <p>SEGUNDOS</p>
+                </div>
+            </div>
+            <button>CORRA E GARANTA</button>
+        </div>
+    </div>
+    <!-- monitoramento -->
+    <div class="monitoramento">
+        <div class="monitoramentoBox1">
+            <div class="p">
+                <p>MONITORAMENTO EM</p>
+                <p>TEMPO REAL</p>
+            </div>
+            <img src="img/right.png" alt="right">
+        </div>
+        <div class="monitoramentoBox2">
+            <div class="p">
+                <p>CONHEÇA AS</p>
+                <p>NOSSAS</p>
+                <p>LOJAS</p>
+            </div>
+            <img src="img/right.png" alt="right">
+        </div>
+    </div>
+    <!-- ultimos-produtos-->
+    <div class="maisVistos">
+        <div class="maisVistosBox">
+            <p>Últimos produtos vistos</p>
+            <div class="maisVistosCarrosel owl-carousel owl-theme col-lg-12 col-md-12">
+                <div class="carrosselItem">
+                    <img src="img/produto.png" alt="produto">
+                    <p>Superia 4000 D4 SMD 4 Zonas</p>
+                    <p>Cdisc</p>
+                    <p>CD367</p>
+                    <p>RS 125,60</p>
+                    <p>RS 109,15</p>
+                    <p>6x de RS18,19 sem juros</p>
+                    <button type="button"><img src="img/carrinho-de-compras.png" alt="carrinho"> COMPRAR</button>
+                </div>
+                <div class="carrosselItem oferta">
+                    <p>-30%</p>
+                    <img src="img/produto.png" alt="produto">
+                    <div class="semanaConsumidor">
+                        <p><img src="img/flash.png" alt="flash"> SEMANA DO CONSUMIDOR</p>
+                    </div>
+                    <p>Superia 4000 D4 SMD 4 Zonas</p>
+                    <p>Cdisc</p>
+                    <p>CD367</p>
+                    <p>RS 125,60</p>
+                    <p>RS 109,15</p>
+                    <p>6x de RS18,19 sem juros</p>
+                    <button type="button"><img src="img/carrinho-de-compras.png" alt="carrinho"> COMPRAR</button>
+                </div>
+                <div class="carrosselItem">
+                    <img src="img/produto.png" alt="produto">
+                    <p id="semEstoque">PRODUTO SEM <br>ESTOQUE</p>
+                    <button type="button" id="disabled">AVISE-ME</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- categorias -->
+    <div class="categorias">
+        <div class="categoriasBox">
+            <p>Compre por categorias</p>
+            <div class="categoriasCarrosel owl-carousel owl-theme col-lg-12 col-md-12">
+                <div class="carrosselItem">
+                    <img src="img/imgWht.png" alt="imgWht">
+                    <a href="#">Cerca Elétrica</a>
+                </div>
+                <div class="carrosselItem">
+                    <img src="img/imgWht.png" alt="imgWht">
+                    <a href="#">Energia</a>
+                </div>
+                <div class="carrosselItem">
+                    <img src="img/imgWht.png" alt="imgWht">
+                    <a href="#">Interfonia</a>
+                </div>
+                <div class="carrosselItem">
+                    <img src="img/imgWht.png" alt="imgWht">
+                    <a href="#">Alarme de incêndio</a>
+                </div>
+                <div class="carrosselItem">
+                    <img src="img/imgWht.png" alt="imgWht">
+                    <a href="#">Smart Home</a>
+                </div>
+                <div class="carrosselItem">
+                    <img src="img/imgWht.png" alt="imgWht">
+                    <a href="#">Câmera de segurança</a>
+                </div>
+                <div class="carrosselItem">
+                    <img src="img/imgWht.png" alt="imgWht">
+                    <a href="#">Acessório</a>
+                </div>
+                <div class="carrosselItem">
+                    <img src="img/imgWht.png" alt="imgWht">
+                    <a href="#">Cabos</a>
+                </div>
+                <div class="carrosselItem">
+                    <img src="img/imgWht.png" alt="imgWht">
+                    <a href="#">Controle de Acesso</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- nossas-lojas -->
+    <div class="nossasLojas">
+        <div class="nossasLojasbOX">
+            <p>CONHEÇAS AS</p>
+            <p>NOSSAS</p>
+            <p>LOJAS</p>
+        </div>
+        <div class="nossasLojasbOX">
+            <p>CONHEÇAS AS</p>
+            <p>NOSSAS</p>
+            <p>LOJAS</p>
+        </div>
+        <div class="nossasLojasbOX">
+            <p>CONHEÇAS AS</p>
+            <p>NOSSAS</p>
+            <p>LOJAS</p>
+        </div>
+        <div class="nossasLojasbOX">
+            <p>CONHEÇAS AS</p>
+            <p>NOSSAS</p>
+            <p>LOJAS</p>
+        </div>
+    </div>
+    <!-- ofertas da semana -->
+    <div class="maisVistos">
+        <div class="maisVistosBox">
+            <p>Ofertas da semana</p>
+            <div class="maisVistosCarrosel owl-carousel owl-theme col-lg-12 col-md-12">
+                <div class="carrosselItem">
+                    <img src="img/produto.png" alt="produto">
+                    <p>Superia 4000 D4 SMD 4 Zonas</p>
+                    <p>Cdisc</p>
+                    <p>CD367</p>
+                    <p>RS 125,60</p>
+                    <p>RS 109,15</p>
+                    <p>6x de RS18,19 sem juros</p>
+                    <button type="button"><img src="img/carrinho-de-compras.png" alt="carrinho"> COMPRAR</button>
+                </div>
+                <div class="carrosselItem oferta">
+                    <p>-30%</p>
+                    <img src="img/produto.png" alt="produto">
+                    <div class="semanaConsumidor">
+                        <p><img src="img/flash.png" alt="flash"> SEMANA DO CONSUMIDOR</p>
+                    </div>
+                    <p>Superia 4000 D4 SMD 4 Zonas</p>
+                    <p>Cdisc</p>
+                    <p>CD367</p>
+                    <p>RS 125,60</p>
+                    <p>RS 109,15</p>
+                    <p>6x de RS18,19 sem juros</p>
+                    <button type="button"><img src="img/carrinho-de-compras.png" alt="carrinho"> COMPRAR</button>
+                </div>
+                <div class="carrosselItem">
+                    <img src="img/produto.png" alt="produto">
+                    <p id="semEstoque">PRODUTO SEM <br>ESTOQUE</p>
+                    <button type="button" id="disabled">AVISE-ME</button>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <!-- marcas -->
+    <div class="categorias">
+        <div class="categoriasBox">
+            <p>Compre por marcas</p>
+            <div class="categoriasCarrosel dois marca owl-carousel owl-theme col-lg-12 col-md-12">
+                <div class="carrosselItem marcas">
+                    <img src="img/imgGry.png" alt="imgGry">
+
+                </div>
+                <div class="carrosselItem marcas">
+                    <img src="img/imgGry.png" alt="imgGry">
+
+                </div>
+                <div class="carrosselItem marcas">
+                    <img src="img/imgGry.png" alt="imgGry">
+
+                </div>
+                <div class="carrosselItem marcas">
+                    <img src="img/imgGry.png" alt="imgGry">
+
+                </div>
+                <div class="carrosselItem marcas">
+                    <img src="img/imgGry.png" alt="imgGry">
+
+                </div>
+                <div class="carrosselItem marcas">
+                    <img src="img/imgGry.png" alt="imgGry">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- cadastro -->
+    <div class="cadastro">
+        <p>QUER FICAR POR DENTRO DAS MELHORES OFERTAS? <a href="#">CADASTRE-SE</a></p>
+        <div class="cadastroBox1">
+            <div class="cadastroBox1Btn">
+                <input type="text" id="" placeholder="Seu nome">
+                <input type="text" id="" placeholder="Seu email">
+                <button>Cadastrar</button>
+            </div>
+            <p>*Clicando em 'cadastrar' você concordo com os nossos termos de Polícas de Privacidade</p>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footerBox1">
+        <div class="footerBox1-2">
+            <p>Sobre a khronos</p>
+            <p>Quem somos</p>
+            <p>Nassa Lojas</p>
+            <p>Responsabilidade Socioambiental</p>
+        </div>
+        <div class="footerBox1-2">
+            <p>Informações</p>
+            <p>Política de trocas e devoluçao</p>
+            <p>Política de compra</p>
+            <p>Política de entrega</p>
+            <p>Meus pedidos</p>
+        </div>
+        <div class="footerBox1-2 wts">
+            <p>Fale Conosco</p>
+            <p>Whatsapp</p>
+            <p>(00) 0000-0000</p>
+            <p>Televendas</p>
+            <p>(00) 0000-0000</p>
+            <p>Seg à Sex das 8h ás 18h</p>
+        </div>
+        <div class="footerBox1-2">
+            <p>Formas de pagamento</p>
+            <div style="display: flex; width: 250px; flex-wrap: wrap;">
+                <img src="img/imgGry.png" alt="imgGry">
+                <img src="img/imgGry.png" alt="imgGry">
+                <img src="img/imgGry.png" alt="imgGry">
+                <img src="img/imgGry.png" alt="imgGry">
+                <img src="img/imgGry.png" alt="imgGry">
+                <img src="img/imgGry.png" alt="imgGry">
+                <img src="img/imgGry.png" alt="imgGry">
+            </div>
+            <p style="margin-top:10px; font-weight: 600;">Compra Segura</p>
+            <img src="img/imgGry.png" alt="imgGry" style="width: 60px; height: 35px;">
+        </div>
+    </div>
+    <div class="footerBox2">
+        <div class="footerBox2_1">
+            <P>SIGA A <strong>KHRONOS</strong> NAS REDES SOCIAIS</P>
+            <div>
+                <img src="img/facebook.png" alt="">
+                <img src="img/instagram.png" alt="">
+                <img src="img/youtube-logotype.png" alt="">
+                <img src="img/linkedin.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="footerBox3">
+        <p>Khronos Industria Comércio em Eletronica LTDA / CNPJ 78.323.064/00004-70</p>
+    </div>
+    <!-- carousel owl lojaCarrosel -->
+    <script>
+        $('.categoriasCarrosel.dois').owlCarousel({
+            loop: true,
+            nav: true,
+            margin: 8,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            responsiveClass: true,
+            responsive: {
+                250: {
+                    items: 2,
+                    nav: false,
+                },
+                375: {
+                    items: 2,
+                    nav: false,
+                },
+                768: {
+                    items: 4,
+                    nav: false,
+                },
+                1160: {
+                    items: 6,
+                    nav: false,
+                },
+            }
+        })
+        $('.categoriasCarrosel').owlCarousel({
+            loop: true,
+            nav: true,
+            margin: 8,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            responsiveClass: true,
+            responsive: {
+                250: {
+                    items: 3,
+                    nav: false,
+                },
+                375: {
+                    items: 3,
+                    nav: false,
+                },
+                768: {
+                    items: 6,
+                    nav: false,
+                },
+                1160: {
+                    items: 7,
+                    nav: false,
+                },
+            }
+        })
+        $('.maisVistosCarrosel').owlCarousel({
+            loop: true,
+            nav: true,
+            margin: 8,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            responsiveClass: true,
+            responsive: {
+                250: {
+                    items: 2,
+                    nav: false,
+                },
+                375: {
+                    items: 2,
+                    nav: false,
+                },
+                768: {
+                    items: 3,
+                    nav: false,
+                },
+                1160: {
+                    items: 4,
+                    nav: false,
+                },
+            }
+        })
+        $('.categoriasCarrosel').owlCarousel({
+            loop: true,
+            nav: true,
+            margin: 8,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            responsiveClass: true,
+            responsive: {
+                250: {
+                    items: 3,
+                    nav: false,
+                },
+                375: {
+                    items: 5,
+                    nav: false,
+                },
+                768: {
+                    items: 7,
+                    nav: false,
+                },
+                1160: {
+                    items: 9,
+                    nav: false,
+                },
+            }
+        })
+    </script>
+    <!-- slidebar script -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- abas bootstrap -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
